@@ -21,3 +21,17 @@ export interface Project {
   lastUpdate: string;
   notes?: string;
 }
+
+export interface Tool {
+  id: string;
+  name: string;
+  description: string;
+  url: string;
+  icon: string;
+  color: string;
+  login_email?: string | null;
+  login_password?: string | null;
+  is_paid: boolean;
+  subscription_status?: string | null;
+  created_at: string;
+}
