@@ -1,0 +1,73 @@
+import { Project } from "@/types";
+
+export const projects: Project[] = [
+  {
+    id: "proj-1",
+    name: "منصة أفريقيا التعليمية",
+    slug: "afrikyia-edu",
+    description: "منصة تعليمية متكاملة لتقديم الدورات التدريبية وإدارة شؤون الطلاب.",
+    logo: "🎓",
+    category: "منصة تعليمية",
+    status: "production",
+    productionUrl: "https://edu.afrikyia.com",
+    adminUrl: "https://admin.edu.afrikyia.com",
+    previewUrl: "https://afrikyia-edu-preview.vercel.app",
+    githubUrl: "https://github.com/afrikyia/edu-platform",
+    vercelUrl: "https://vercel.com/afrikyia/edu-platform",
+    supabaseUrl: "https://supabase.com/dashboard/project/edu-platform",
+    technologies: ["Next.js", "Tailwind CSS", "Supabase", "TypeScript"],
+    client: "أكاديمية المستقبل",
+    startDate: "2025-01-10",
+    deliveryDate: "2025-06-15",
+    lastUpdate: "2025-08-10",
+    notes: "المشروع يعمل بشكل ممتاز. هناك تحديث قادم لإضافة نظام الدفع الإلكتروني."
+  },
+  {
+    id: "proj-2",
+    name: "متجر أفريقيا الإلكتروني",
+    slug: "afrikyia-store",
+    description: "متجر إلكتروني لبيع المنتجات التقنية مع دعم الدفع عند الاستلام.",
+    logo: "🛒",
+    category: "تجارة إلكترونية",
+    status: "development",
+    previewUrl: "https://afrikyia-store-preview.vercel.app",
+    githubUrl: "https://github.com/afrikyia/e-commerce",
+    vercelUrl: "https://vercel.com/afrikyia/e-commerce",
+    technologies: ["React", "Node.js", "MongoDB", "Express"],
+    client: "شركة التقنية المتقدمة",
+    startDate: "2026-03-01",
+    lastUpdate: "2026-07-20",
+    notes: "في مرحلة ربط بوابات الدفع واختبار سلة المشتريات."
+  },
+  {
+    id: "proj-3",
+    name: "نظام إدارة الموارد (ERP)",
+    slug: "afrikyia-erp",
+    description: "نظام داخلي لإدارة شؤون الموظفين، الرواتب، والمخزون.",
+    logo: "💼",
+    category: "أنظمة داخلية",
+    status: "paused",
+    githubUrl: "https://github.com/afrikyia/erp-system",
+    technologies: ["Vue.js", "Laravel", "MySQL"],
+    client: "داخلي",
+    startDate: "2025-08-01",
+    lastUpdate: "2025-11-20",
+    notes: "تم إيقاف المشروع مؤقتاً لتغيير المتطلبات من قبل الإدارة."
+  },
+  {
+    id: "proj-4",
+    name: "تطبيق التوصيل السريع",
+    slug: "afrikyia-delivery",
+    description: "تطبيق جوال لتتبع طلبات التوصيل وتوزيع المندوبين.",
+    logo: "🚚",
+    category: "تطبيق جوال",
+    status: "archived",
+    githubUrl: "https://github.com/afrikyia/delivery-app",
+    technologies: ["Flutter", "Firebase"],
+    client: "شركة التوصيل السريع",
+    startDate: "2023-01-01",
+    deliveryDate: "2023-08-30",
+    lastUpdate: "2024-01-10",
+    notes: "تم تسليم المشروع وانتهت فترة الصيانة المجانية."
+  }
+];
