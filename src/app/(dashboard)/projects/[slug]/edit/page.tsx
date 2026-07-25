@@ -63,7 +63,16 @@ export default async function EditProjectPage({
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium">التصنيف *</label>
-                  <input required name="category" type="text" defaultValue={project.category} className="w-full p-2 rounded-lg border border-border bg-background" />
+                  <select required name="category" defaultValue={project.category} className="w-full p-2 rounded-lg border border-border bg-background">
+                    <option value="" disabled>اختر التصنيف...</option>
+                    <option value="المواقع الإلكترونية">المواقع الإلكترونية</option>
+                    <option value="تطبيقات الجوال">تطبيقات الجوال</option>
+                    <option value="المشاريع الفنية">المشاريع الفنية</option>
+                    <option value="المشاريع الثقافية">المشاريع الثقافية</option>
+                    <option value="تنفيذ الخدمات">تنفيذ الخدمات</option>
+                    <option value="الاستشارات">الاستشارات</option>
+                    <option value="الدراسات">الدراسات</option>
+                  </select>
                 </div>
 
                 <div className="space-y-2">

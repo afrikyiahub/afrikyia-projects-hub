@@ -42,7 +42,16 @@ export default function NewProjectPage() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium">التصنيف *</label>
-                  <input required name="category" type="text" className="w-full p-2 rounded-lg border border-border bg-background" placeholder="مثال: منصة تعليمية" />
+                  <select required name="category" className="w-full p-2 rounded-lg border border-border bg-background">
+                    <option value="" disabled selected>اختر التصنيف...</option>
+                    <option value="المواقع الإلكترونية">المواقع الإلكترونية</option>
+                    <option value="تطبيقات الجوال">تطبيقات الجوال</option>
+                    <option value="المشاريع الفنية">المشاريع الفنية</option>
+                    <option value="المشاريع الثقافية">المشاريع الثقافية</option>
+                    <option value="تنفيذ الخدمات">تنفيذ الخدمات</option>
+                    <option value="الاستشارات">الاستشارات</option>
+                    <option value="الدراسات">الدراسات</option>
+                  </select>
                 </div>
 
                 <div className="space-y-2">
