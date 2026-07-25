@@ -5,15 +5,15 @@ import { ExternalLink, GitBranch, Monitor, Database, Settings } from "lucide-rea
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="bg-card text-card-foreground border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col h-full">
+    <div className="bg-card text-card-foreground border border-border rounded-xl p-6 shadow-sm hover:shadow-md hover:border-primary/50 transition-all flex flex-col h-full relative group cursor-pointer">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center text-2xl">
             {project.logo}
           </div>
           <div>
-            <Link href={`/projects/${project.slug}`} className="hover:underline">
-              <h3 className="font-bold text-lg">{project.name}</h3>
+            <Link href={`/projects/${project.slug}`} className="hover:underline before:absolute before:inset-0 before:z-0">
+              <h3 className="font-bold text-lg group-hover:text-primary transition-colors">{project.name}</h3>
             </Link>
             <p className="text-xs text-muted-foreground">{project.category}</p>
           </div>
@@ -26,7 +26,7 @@ export function ProjectCard({ project }: { project: Project }) {
       </p>
 
       <div className="flex items-center justify-between mt-auto pt-4 border-t border-border">
-        <div className="flex gap-2">
+        <div className="flex gap-2 relative z-10">
           {project.productionUrl && (
             <a
               href={project.productionUrl}

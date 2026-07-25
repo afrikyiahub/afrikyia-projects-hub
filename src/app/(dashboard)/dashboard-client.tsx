@@ -15,7 +15,7 @@ export function DashboardClient({ initialProjects }: { initialProjects: Project[
   const initialStatus = searchParams.get("status") as ProjectStatus | "all" || "all";
   
   const [searchQuery, setSearchQuery] = useState("");
-  const [statusFilter, setStatusFilter] = useState<ProjectStatus | "all">(initialStatus);
+  const statusFilter = initialStatus;
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
 
   const categories = Array.from(new Set(initialProjects.map(p => p.category)));
@@ -73,7 +73,6 @@ export function DashboardClient({ initialProjects }: { initialProjects: Project[
           <select
             value={statusFilter}
             onChange={(e) => {
-              setStatusFilter(e.target.value as any);
               router.push(`/?status=${e.target.value}`);
             }}
             className="w-full md:w-auto bg-background border border-border rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-primary transition-colors cursor-pointer"
