@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import {
   LayoutDashboard,
   FolderKanban,
@@ -15,17 +15,19 @@ import {
 
 const navItems = [
   { href: "/", label: "الرئيسية", icon: LayoutDashboard },
-  { href: "/projects", label: "جميع المشاريع", icon: FolderKanban },
-  { href: "/projects?status=production", label: "المشاريع المنشورة", icon: CheckCircle2 },
-  { href: "/projects?status=development", label: "قيد التطوير", icon: MonitorPlay },
-  { href: "/projects?status=paused", label: "المتوقفة", icon: PauseCircle },
-  { href: "/projects?status=archived", label: "المؤرشفة", icon: Archive },
+  { href: "/?status=all", label: "جميع المشاريع", icon: FolderKanban },
+  { href: "/?status=production", label: "المشاريع المنشورة", icon: CheckCircle2 },
+  { href: "/?status=development", label: "قيد التطوير", icon: MonitorPlay },
+  { href: "/?status=paused", label: "المتوقفة", icon: PauseCircle },
+  { href: "/?status=archived", label: "المؤرشفة", icon: Archive },
   { href: "/tools", label: "أدوات العمل", icon: Wrench },
   { href: "/settings", label: "الإعدادات", icon: Settings },
 ];
 
 export function Sidebar() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const currentStatus = searchParams.get("status");
 
   return (
     <aside className="w-64 bg-card border-l border-border flex flex-col h-screen hidden md:flex sticky top-0">
@@ -34,9 +36,18 @@ export function Sidebar() {
       </div>
       <nav className="flex-1 p-4 space-y-1 overflow-y-auto">
         {navItems.map((item) => {
-          const isActive = pathname === item.href || (pathname.startsWith("/projects") && item.href === "/projects");
-          // Note: A more complex matching might be needed if searchParams are used, 
-          // but for simplicity, we just match pathname.
+          let isActive = false;
+          
+          if (pathname === "/") {
+            const itemStatus = new URL(item.href, "http://localhost").searchParams.get("status");
+            if (item.href === "/" && !currentStatus) {
+              isActive = true;
+            } else if (currentStatus === itemStatus) {
+              isActive = true;
+            }
+          } else {
+            isActive = pathname === item.href;
+          }
 
           return (
             <Link
