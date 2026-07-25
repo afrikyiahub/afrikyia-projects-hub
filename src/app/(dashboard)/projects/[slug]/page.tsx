@@ -93,21 +93,21 @@ export default async function ProjectDetailsPage({
                 <span className="text-sm text-muted-foreground block">تاريخ البدء</span>
                 <span className="font-medium flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-muted-foreground" />
-                  {project.startDate ? new Date(project.startDate).toLocaleDateString("ar-EG") : "غير محدد"}
+                  {project.startDate ? new Date(project.startDate).toLocaleDateString("en-GB") : "غير محدد"}
                 </span>
               </div>
               <div className="space-y-1">
                 <span className="text-sm text-muted-foreground block">تاريخ التسليم</span>
                 <span className="font-medium flex items-center gap-2">
                   <Clock className="w-4 h-4 text-muted-foreground" />
-                  {project.deliveryDate ? new Date(project.deliveryDate).toLocaleDateString("ar-EG") : "غير محدد"}
+                  {project.deliveryDate ? new Date(project.deliveryDate).toLocaleDateString("en-GB") : "غير محدد"}
                 </span>
               </div>
               <div className="space-y-1">
                 <span className="text-sm text-muted-foreground block">آخر تحديث</span>
                 <span className="font-medium flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-muted-foreground" />
-                  {new Date(project.lastUpdate).toLocaleDateString("ar-EG")}
+                  {new Date(project.lastUpdate).toLocaleDateString("en-GB")}
                 </span>
               </div>
             </div>

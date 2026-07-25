@@ -84,7 +84,7 @@ export function ProjectCard({ project }: { project: Project }) {
           )}
         </div>
         <div className="text-xs text-muted-foreground">
-          آخر تحديث: {new Date(project.lastUpdate).toLocaleDateString("ar-EG")}
+          آخر تحديث: {new Date(project.lastUpdate).toLocaleDateString("en-GB")}
         </div>
       </div>
     </div>
